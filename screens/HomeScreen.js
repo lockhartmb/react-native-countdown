@@ -18,7 +18,9 @@ export default function HomeScreen() {
         style={styles.container}
         contentContainerStyle={styles.contentContainer}
       >
-        <Text style={styles.getStartedText}>The planet will end in:</Text>
+        <Text style={styles.getStartedText}>
+          Without significant intervention now, the planet will end in:
+        </Text>
         <Countdown />
       </ScrollView>
     </View>
