@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
   View
 } from "react-native";
+import Countdown from "../components/Countdown";
 
 export default function HomeScreen() {
   return (
@@ -17,9 +18,8 @@ export default function HomeScreen() {
         style={styles.container}
         contentContainerStyle={styles.contentContainer}
       >
-        <Text style={styles.getStartedText}>
-          This is my first React Native App
-        </Text>
+        <Text style={styles.getStartedText}>The planet will end in:</Text>
+        <Countdown />
       </ScrollView>
     </View>
   );
