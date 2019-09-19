@@ -1,14 +1,6 @@
 import * as WebBrowser from "expo-web-browser";
 import React from "react";
-import {
-  Image,
-  Platform,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View
-} from "react-native";
+import { Platform, ScrollView, StyleSheet, Text, View } from "react-native";
 import Countdown from "../components/Countdown";
 
 export default function HomeScreen() {
@@ -18,9 +10,6 @@ export default function HomeScreen() {
         style={styles.container}
         contentContainerStyle={styles.contentContainer}
       >
-        <Text style={styles.getStartedText}>
-          Without significant intervention now, the planet will end in:
-        </Text>
         <Countdown />
       </ScrollView>
     </View>
@@ -54,11 +43,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#000"
   },
   contentContainer: {
-    flexDirection: "column",
-    justifyContent: "center",
+    flexDirection: "row",
+    // justifyContent: "center"
     alignItems: "center",
-    flex: 1,
-    paddingHorizontal: 50
+    flex: 1
+    // paddingHorizontal: 50
   },
   welcomeContainer: {
     alignItems: "center",

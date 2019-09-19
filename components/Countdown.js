@@ -6,11 +6,15 @@ const Countdown = () => {
   const [endDate] = useState(moment("2030-01-01"));
   const [today] = useState(moment());
   const [difference, setDifference] = useState(endDate.diff(today, "seconds"));
-  //   const [years, setYears] = useState(endDate.diff(today, "years"));
-  //   const [days, setDays] = useState(endDate.diff(today, "days"));
-  //   const [hours, setHours] = useState(endDate.diff(today, "hours"));
-  //   const [minutes, setMinutes] = useState(endDate.diff(today, "minutes"));
-  //   const [seconds, setSeconds] = useState(endDate.diff(today, "seconds"));
+
+  // const calculateRemainingTime = () => {
+  //   const difference = endDate.diff(today, "seconds");
+  //   return difference;
+  // };
+
+  useEffect(() => {
+    setDifference(endDate.diff(today, "seconds"));
+  }, [endDate, today]);
 
   const years = parseInt(difference / (60 * 60 * 24 * 365));
   const days = parseInt((difference / (60 * 60 * 24 * 365) - years) * 365);
@@ -49,8 +53,9 @@ export default Countdown;
 
 const styles = StyleSheet.create({
   getStartedText: {
-    fontSize: 27,
+    fontSize: 40,
     color: "#fff",
-    textAlign: "center"
+    textTransform: "uppercase",
+    fontWeight: "bold"
   }
 });
