@@ -7,14 +7,10 @@ const Countdown = () => {
   const [today] = useState(moment());
   const [difference, setDifference] = useState(endDate.diff(today, "seconds"));
 
-  // const calculateRemainingTime = () => {
-  //   const difference = endDate.diff(today, "seconds");
-  //   return difference;
-  // };
-
-  useEffect(() => {
-    setDifference(endDate.diff(today, "seconds"));
-  }, [endDate, today]);
+  const calculateRemainingTime = setInterval(
+    setDifference(endDate.diff(today, "seconds")),
+    1000
+  );
 
   const years = parseInt(difference / (60 * 60 * 24 * 365));
   const days = parseInt((difference / (60 * 60 * 24 * 365) - years) * 365);
